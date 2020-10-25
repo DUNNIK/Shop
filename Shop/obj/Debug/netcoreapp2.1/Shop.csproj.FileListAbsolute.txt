@@ -1,0 +1,12 @@
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.deps.json
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.runtimeconfig.json
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.runtimeconfig.dev.json
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.dll
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.pdb
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.csprojAssemblyReference.cache
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.AssemblyInfoInputs.cache
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.AssemblyInfo.cs
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.csproj.CoreCompileInputs.cache
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.dll
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.pdb
+C:\Users\NIKITOS\RiderProjects\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.genruntimeconfig.cache

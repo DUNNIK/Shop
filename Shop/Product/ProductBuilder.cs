@@ -4,7 +4,7 @@ namespace Shop.Product
 {
     public abstract class ProductBuilder
     {
-        public Product Product;
+        protected Product Product;
         public ProductBuilder(){}
         protected ProductBuilder(Product product) => Product = product;
         public abstract ProductBuilder AddName(string name);

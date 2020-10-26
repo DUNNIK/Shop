@@ -1,4 +1,4 @@
-﻿namespace Shop.Shop
+﻿namespace Shop.Shop.Methods
 {
     public class FindProductsForSpecifyAmount : OrdinaryShopBuilder
     {
@@ -7,7 +7,7 @@
         private static string MakeStr(Product.Product product, int count)
         {
             string result;
-            if (product.isKilogramms())
+            if (product.IsKilogramms())
             {
                 result = product.Name + " - " + count + " kilogramms" + "\n";
             }

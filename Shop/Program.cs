@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using Shop.Exeptions;
 using Shop.Product;
 using Shop.Shop;
+using Shop.Shop.Methods;
 using static System.Console;
 
 namespace Shop
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             var apple = new ProductKilogramsBuider();
             apple.AddId().AddName("Apple").AddCount(300)

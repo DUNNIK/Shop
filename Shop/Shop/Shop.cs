@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Shop.Exeptions;
+﻿using Shop.Exeptions;
 using Shop.Product;
-using static System.Console;
 
 namespace Shop.Shop
 {
@@ -40,17 +37,6 @@ namespace Shop.Shop
         {
             return $@"Name: {Name}. Id: {Id}.";
         }
-        public string ProductsToString()
-        {
-            string str = "";
-            foreach (var products in ManagerOfShopProducts.Build().TrackedProducts)
-            {
-                str += products.Value.ToString();
-                str += "\n";
-            }
-
-            return str;
-        }
     }
     public class OrdinaryShop : Shop
     {
@@ -60,6 +46,19 @@ namespace Shop.Shop
 
         public OrdinaryShop(string str) : base(str)
         {
+        }
+        
+        public string ProductsToString()
+        {
+            string str = "";
+            foreach (var products 
+                in ManagerOfShopProducts.Build().TrackedProducts)
+            {
+                str += products.Value.ToString();
+                str += "\n";
+            }
+
+            return str;
         }
     }
 }

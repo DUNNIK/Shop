@@ -1,5 +1,5 @@
 ﻿
-namespace Shop.Shop
+namespace Shop.Shop.Methods
 {
         public class OrdinaryShopProductCountBuilder : OrdinaryShopBuilder
     {

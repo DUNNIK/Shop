@@ -1,8 +1,10 @@
-﻿namespace Shop.Shop
+﻿using Shop.Shop.Methods;
+
+namespace Shop.Shop
 {
     public class ShopManagerBuilder
     {
-        public ShopManager Manager;
+        protected ShopManager Manager;
 
         public ShopManagerBuilder() => Manager = new ShopManager();
         public ShopManagerBuilder(ShopManager manager) => Manager = manager;

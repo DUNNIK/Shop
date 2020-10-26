@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Shop.Exeptions;
-
-namespace Shop.Shop
+﻿namespace Shop.Shop.Methods
 {
     public class FindShopWithCheapestProduct : ShopManagerBuilder
     {
@@ -10,7 +6,7 @@ namespace Shop.Shop
 
         private static bool TryId(OrdinaryShop ordinaryShop, string productId)
         {
-            return ordinaryShop.ManagerOfShopProducts.Manager.TrackedProducts.ContainsKey(productId);
+            return ordinaryShop.ManagerOfShopProducts.Build().TrackedProducts.ContainsKey(productId);
         }
         public static string Find(string productId, ShopManager manager)
         {
@@ -20,7 +16,7 @@ namespace Shop.Shop
             {
                 if (TryId(shop, productId))
                 {
-                    price = shop.ManagerOfShopProducts.Manager.TrackedProducts[productId].Price;
+                    price = shop.ManagerOfShopProducts.Build().TrackedProducts[productId].Price;
                 }
                 if (price < minPrice)
                 {
@@ -39,7 +35,7 @@ namespace Shop.Shop
             {
                 if (TryId(shop, productId))
                 {
-                    price = shop.ManagerOfShopProducts.Manager.TrackedProducts[productId].Price;
+                    price = shop.ManagerOfShopProducts.Build().TrackedProducts[productId].Price;
                 }
 
                 if (price < minPrice)

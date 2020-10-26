@@ -1,6 +1,4 @@
-﻿using System;
-using Shop.Exeptions;
-using static System.Console;
+﻿using Shop.Exeptions;
 
 namespace Shop.Product
 {
@@ -11,14 +9,9 @@ namespace Shop.Product
         private string _id;
 
         private string _name;
-
-        public Product()
-        {
-        }
-
         public abstract Product Clone();
-        public abstract bool isPieces();
-        public abstract bool isKilogramms();
+        public abstract bool IsPieces();
+        public abstract bool IsKilogramms();
         public string Name
         {
             get => _name;
@@ -72,12 +65,12 @@ namespace Shop.Product
             return clProduct;
         }
 
-        public override bool isPieces()
+        public override bool IsPieces()
         {
             return false;
         }
 
-        public override bool isKilogramms()
+        public override bool IsKilogramms()
         {
             return true;
         }
@@ -98,12 +91,12 @@ namespace Shop.Product
             return clProduct;
         }
 
-        public override bool isPieces()
+        public override bool IsPieces()
         {
             return true;
         }
 
-        public override bool isKilogramms()
+        public override bool IsKilogramms()
         {
             return false;
         }

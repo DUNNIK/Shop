@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Shop.Exeptions;
 
-namespace Shop.Shop
+namespace Shop.Shop.Methods
 {
     public class CheapestBuyProducts : ShopManagerBuilder
     {

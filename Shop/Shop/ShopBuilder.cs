@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using Shop.Exeptions;
 using Shop.Product;
+using Shop.Shop.Methods;
 
 namespace Shop.Shop
 {
     public class OrdinaryShopBuilder
     {
-        public OrdinaryShop OrdinaryShop;
+        protected OrdinaryShop OrdinaryShop;
         public OrdinaryShopBuilder() => OrdinaryShop = new OrdinaryShop();
         protected OrdinaryShopBuilder(OrdinaryShop ordinaryShop) => OrdinaryShop = ordinaryShop;
 

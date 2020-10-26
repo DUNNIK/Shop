@@ -3,7 +3,7 @@ namespace Shop.Product
 {
     public class ProductManagerBuilder
     {
-        public ProductManager Manager;
+        protected ProductManager Manager;
 
         public ProductManagerBuilder() => Manager = new ProductManager();
         public ProductManagerBuilder(ProductManager manager) 

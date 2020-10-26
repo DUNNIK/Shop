@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Shop.Exeptions;
+using Shop.Exceptions;
 
 namespace Shop.Shop.Methods
 {
@@ -12,7 +12,7 @@ namespace Shop.Shop.Methods
         public string Find(Dictionary<string, int> products)
         {
             float minCheck = float.MaxValue;
-            OrdinaryShop resultOrdinaryShop = new OrdinaryShop("");
+            Shop resultOrdinaryShop = new OrdinaryShop("");
             foreach (var shop in Manager.TrackedShops.Values)
             {
                 if (TryCheckProducts(products, shop))
@@ -25,13 +25,13 @@ namespace Shop.Shop.Methods
                     }
                 }
             }
-            string result = resultOrdinaryShop.Name != null ? resultOrdinaryShop.Name : "No shop";
+            string result = resultOrdinaryShop.Name ?? "No shop";
             return result;
         }
         public static string Find(Dictionary<string, int> products, ShopManager manager)
         {
             float minCheck = float.MaxValue;
-            OrdinaryShop resultOrdinaryShop = new OrdinaryShop("");
+            Shop resultOrdinaryShop = new OrdinaryShop("");
             foreach (var shop in manager.TrackedShops.Values)
             {
                 if (TryCheckProducts(products, shop))
@@ -44,11 +44,11 @@ namespace Shop.Shop.Methods
                     }
                 }
             }
-            string result = resultOrdinaryShop.Name != null ? resultOrdinaryShop.Name : "No shop";
+            string result = resultOrdinaryShop.Name ?? "No shop";
             return result;
         }
 
-        public static bool TryCheckProducts(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
+        private static bool TryCheckProducts(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
         {
             bool res = true;
             try
@@ -62,7 +62,8 @@ namespace Shop.Shop.Methods
 
             return res;
         }
-        public static float CheckProducts(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
+
+        private static float CheckProducts(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
         {
             float checkAmount = 0;
             foreach (var product in products)
@@ -72,7 +73,8 @@ namespace Shop.Shop.Methods
 
             return checkAmount;
         }
-        public static bool TryToCheckOrdinaryProduct(KeyValuePair<string, int> product, OrdinaryShop ordinaryShop)
+
+        private static bool TryToCheckOrdinaryProduct(KeyValuePair<string, int> product, OrdinaryShop ordinaryShop)
         {
             bool result = false;
             var productId = product.Key;
@@ -86,7 +88,8 @@ namespace Shop.Shop.Methods
             }
             return result;
         }
-        public static float CheckOrdinaryProduct(KeyValuePair<string, int> product,
+
+        private static float CheckOrdinaryProduct(KeyValuePair<string, int> product,
             OrdinaryShop ordinaryShop)
         {
             float checkAmount = 0;

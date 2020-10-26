@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Shop.Exeptions;
+using Shop.Exceptions;
 using Shop.Product;
 using Shop.Shop;
 using Shop.Shop.Methods;
@@ -8,31 +8,31 @@ using static System.Console;
 
 namespace Shop
 {
-    internal class Program
+    internal static class Program
     {
         private static void Main()
         {
-            var apple = new ProductKilogramsBuider();
+            var apple = new ProductKilogramsBuilder();
             apple.AddId().AddName("Apple").AddCount(300)
                 .AddPrice((float) 56.35643);
-            var chocolate = new ProductPiecesBuider();
+            var chocolate = new ProductPiecesBuilder();
             chocolate.AddId().AddName("Chocolate").AddCount(1000);
-            var oranges = new ProductPiecesBuider();
+            var oranges = new ProductPiecesBuilder();
             oranges.AddId().AddName("Orange").AddCount(120);
-            var cucumbers = new ProductKilogramsBuider();
+            var cucumbers = new ProductKilogramsBuilder();
             cucumbers.AddId().AddName("Cucumber").AddCount((float) 325.4);
-            var tomatoes = new ProductKilogramsBuider();
+            var tomatoes = new ProductKilogramsBuilder();
             tomatoes.AddId().AddName("Tomato").AddCount(50)
                 .AddPrice(100);
-            var socks = new ProductPiecesBuider();
+            var socks = new ProductPiecesBuilder();
             socks.AddId().AddName("Socks").AddCount(20);
-            var bottleOfWater = new ProductPiecesBuider();
+            var bottleOfWater = new ProductPiecesBuilder();
             bottleOfWater.AddId().AddName("Bottle of water").AddCount(120);
-            var vodka = new ProductPiecesBuider();
+            var vodka = new ProductPiecesBuilder();
             vodka.AddId().AddName("Vodka").AddCount(300);
-            var sausage = new ProductPiecesBuider();
+            var sausage = new ProductPiecesBuilder();
             sausage.AddId().AddName("Sausage").AddCount(120);
-            var cheese = new ProductPiecesBuider();
+            var cheese = new ProductPiecesBuilder();
             cheese.AddId().AddName("Cheese").AddCount(120);
             
             var allProducts = new ProductManagerBuilder();

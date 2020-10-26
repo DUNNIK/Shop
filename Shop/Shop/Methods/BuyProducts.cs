@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Shop.Exeptions;
+using Shop.Exceptions;
 
 namespace Shop.Shop.Methods
 {
@@ -11,7 +11,7 @@ namespace Shop.Shop.Methods
             OrdinaryShop = ordinaryShop;
         }
 
-        public bool TryToBuyProduct(KeyValuePair<string, int> product)
+        private bool TryToBuyProduct(KeyValuePair<string, int> product)
         {
             bool result = false;
             var productId = product.Key;
@@ -35,7 +35,8 @@ namespace Shop.Shop.Methods
 
             return checkAmount;
         }
-        public float BuyOrdinaryProduct(KeyValuePair<string, int> product)
+
+        private float BuyOrdinaryProduct(KeyValuePair<string, int> product)
         {
             float checkAmount = 0;
             if (TryToBuyProduct(product))
@@ -54,7 +55,8 @@ namespace Shop.Shop.Methods
 
             return checkAmount;
         }
-        public static float BuyOrdinaryProduct(KeyValuePair<string, int> product,
+
+        private static float BuyOrdinaryProduct(KeyValuePair<string, int> product,
             OrdinaryShop ordinaryShop)
         {
             float checkAmount = 0;
@@ -74,7 +76,8 @@ namespace Shop.Shop.Methods
 
             return checkAmount;
         }
-        public static bool TryToBuyProduct(KeyValuePair<string, int> product, OrdinaryShop ordinaryShop)
+
+        private static bool TryToBuyProduct(KeyValuePair<string, int> product, OrdinaryShop ordinaryShop)
         {
             bool result = false;
             var productId = product.Key;

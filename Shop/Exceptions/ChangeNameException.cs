@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Shop.Exeptions
+namespace Shop.Exceptions
 {
     public class ChangeNameException : Exception
     {

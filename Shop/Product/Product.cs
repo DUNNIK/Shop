@@ -1,4 +1,4 @@
-﻿using Shop.Exeptions;
+﻿using Shop.Exceptions;
 
 namespace Shop.Product
 {
@@ -11,7 +11,7 @@ namespace Shop.Product
         private string _name;
         public abstract Product Clone();
         public abstract bool IsPieces();
-        public abstract bool IsKilogramms();
+        public abstract bool IsKilograms();
         public string Name
         {
             get => _name;
@@ -28,7 +28,7 @@ namespace Shop.Product
             get => _id;
             set
             {
-                if (_id != null) throw new ChangeIdExeption();
+                if (_id != null) throw new ChangeIdException();
 
                 _id = value;
             }
@@ -53,11 +53,11 @@ namespace Shop.Product
             return $@"Name: {Name}. Id: {Id}. Cost: {Price}. Size: {Count}";
         }
     }
-    public class ProductKilogramms : Product
+    public class ProductKilograms : Product
     {
         public override Product Clone()
         {
-            Product clProduct = new ProductKilogramms();
+            Product clProduct = new ProductKilograms();
             clProduct.Id = Id;
             clProduct.Name = Name;
             clProduct.Price = 0;
@@ -70,7 +70,7 @@ namespace Shop.Product
             return false;
         }
 
-        public override bool IsKilogramms()
+        public override bool IsKilograms()
         {
             return true;
         }
@@ -96,7 +96,7 @@ namespace Shop.Product
             return true;
         }
 
-        public override bool IsKilogramms()
+        public override bool IsKilograms()
         {
             return false;
         }
@@ -112,7 +112,7 @@ namespace Shop.Product
             }
         }
 
-        public bool IsInt(float value)
+        private bool IsInt(float value)
         {
             return value - (int) value == 0;
         }

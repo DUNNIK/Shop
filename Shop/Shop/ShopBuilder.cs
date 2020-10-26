@@ -1,5 +1,5 @@
 ﻿using System;
-using Shop.Exeptions;
+using Shop.Exceptions;
 using Shop.Product;
 using Shop.Shop.Methods;
 
@@ -33,7 +33,7 @@ namespace Shop.Shop
             }
             catch
             {
-                throw new IdExeption();
+                throw new IdException();
             }
             return this;
         }
@@ -44,7 +44,7 @@ namespace Shop.Shop
             return this;
         }
 
-        public OrdinaryShopProductPriceBuider Prices => new OrdinaryShopProductPriceBuider(OrdinaryShop);
+        public OrdinaryShopProductPriceBuilder Prices => new OrdinaryShopProductPriceBuilder(OrdinaryShop);
         public OrdinaryShopProductCountBuilder Count => new OrdinaryShopProductCountBuilder(OrdinaryShop);
         public FindProductsForSpecifyAmount SpecifyAmount 
             => new FindProductsForSpecifyAmount(OrdinaryShop);

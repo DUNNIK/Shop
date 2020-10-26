@@ -4,7 +4,7 @@ namespace Shop.Shop
 {
     public class ShopManager
     {
-        public Dictionary<string, OrdinaryShop> TrackedShops 
+        public readonly Dictionary<string, OrdinaryShop> TrackedShops 
             = new Dictionary<string, OrdinaryShop>();
     }
 }

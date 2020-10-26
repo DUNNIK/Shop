@@ -1,4 +1,4 @@
-﻿using Shop.Exeptions;
+﻿using Shop.Exceptions;
 using Shop.Product;
 
 namespace Shop.Shop
@@ -7,8 +7,9 @@ namespace Shop.Shop
     {
         private string _id;
         private string _name;
-        public ProductManagerBuilder ManagerOfShopProducts;
-        public Shop() => 
+        public readonly ProductManagerBuilder ManagerOfShopProducts;
+
+        protected Shop() => 
             ManagerOfShopProducts = new ProductManagerBuilder();
         public Shop(string str){}
         public string Name
@@ -27,7 +28,7 @@ namespace Shop.Shop
             get => _id;
             set
             {
-                if (_id != null) throw new ChangeIdExeption();
+                if (_id != null) throw new ChangeIdException();
 
                 _id = value;
             }

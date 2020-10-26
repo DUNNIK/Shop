@@ -5,7 +5,7 @@ namespace Shop.Product
     public abstract class ProductBuilder
     {
         protected Product Product;
-        public ProductBuilder(){}
+        protected ProductBuilder(){}
         protected ProductBuilder(Product product) => Product = product;
         public abstract ProductBuilder AddName(string name);
         public abstract ProductBuilder AddPrice(float price);
@@ -17,9 +17,9 @@ namespace Shop.Product
             => builder.Product;
     }
 
-    public class ProductKilogramsBuider : ProductBuilder
+    public class ProductKilogramsBuilder : ProductBuilder
     {
-        public ProductKilogramsBuider() => Product = new ProductKilogramms();
+        public ProductKilogramsBuilder() => Product = new ProductKilograms();
         public override ProductBuilder AddName(string name)
         {
             Product.Name = name;
@@ -42,9 +42,9 @@ namespace Shop.Product
         }
     }
 
-    public class ProductPiecesBuider : ProductBuilder
+    public class ProductPiecesBuilder : ProductBuilder
     {
-        public ProductPiecesBuider() => Product = new ProductPieces();
+        public ProductPiecesBuilder() => Product = new ProductPieces();
         public override ProductBuilder AddName(string name)
         {
             Product.Name = name;

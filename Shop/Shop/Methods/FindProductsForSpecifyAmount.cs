@@ -7,9 +7,9 @@
         private static string MakeStr(Product.Product product, int count)
         {
             string result;
-            if (product.IsKilogramms())
+            if (product.IsKilograms())
             {
-                result = product.Name + " - " + count + " kilogramms" + "\n";
+                result = product.Name + " - " + count + " kilograms" + "\n";
             }
             else
             {

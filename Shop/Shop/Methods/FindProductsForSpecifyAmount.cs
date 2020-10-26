@@ -1,8 +1,8 @@
 ﻿namespace Shop.Shop
 {
-    public class FindProductsForSpecifyAmount : ShopBuilder
+    public class FindProductsForSpecifyAmount : OrdinaryShopBuilder
     {
-        public FindProductsForSpecifyAmount(Shop shop) : base(shop){}
+        public FindProductsForSpecifyAmount(OrdinaryShop ordinaryShop) : base(ordinaryShop){}
 
         private static string MakeStr(Product.Product product, int count)
         {
@@ -33,7 +33,7 @@
         public string Find(float amount)
         {
             string resultProducts = "";
-            foreach (var product in Shop.ManagerOfShopProducts.
+            foreach (var product in OrdinaryShop.ManagerOfShopProducts.
                 Build().TrackedProducts.Values)
             {
                 var count = HowManyProducts(product.Price, amount);
@@ -42,10 +42,10 @@
 
             return resultProducts;
         }
-        public static string Find(float amount, Shop shop)
+        public static string Find(float amount, OrdinaryShop ordinaryShop)
         {
             string resultProducts = "";
-            foreach (var product in shop.ManagerOfShopProducts.Build().
+            foreach (var product in ordinaryShop.ManagerOfShopProducts.Build().
                 TrackedProducts.Values)
             {
                 if (product.Price < amount)

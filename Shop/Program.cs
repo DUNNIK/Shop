@@ -40,7 +40,7 @@ namespace Shop
                 .AddProduct(bottleOfWater).AddProduct(vodka).AddProduct(sausage)
                 .AddProduct(cheese);
             
-            var shopMagnit = new ShopBuilder();
+            var shopMagnit = new OrdinaryShopBuilder();
             shopMagnit.AddId().AddName("Magnit")
                 .AddProduct(apple).Count.New(apple, 200).Prices.New(apple, 47)
                 .AddProduct(bottleOfWater).Count.ChangeOn(bottleOfWater, 45).Prices.New(bottleOfWater, 50)
@@ -51,7 +51,7 @@ namespace Shop
                 .AddProduct(cheese).Count.ChangeOn(cheese, 45).Prices.New(cheese, 50)
                 .AddProduct(cucumbers).Count.ChangeOn(cucumbers, 300).Prices.New(cucumbers, (float)299.9)
                 .AddProduct(oranges).Count.ChangeOn(oranges, 100).Prices.ChangeOn(oranges, 300);
-            var shopFive = new ShopBuilder();
+            var shopFive = new OrdinaryShopBuilder();
             shopFive.AddId().AddName("Five")
                 .AddProduct(apple).Count.New(apple, 600).Prices.New(apple, 10)
                 .AddProduct(bottleOfWater).Count.ChangeOn(bottleOfWater, 50).Prices.New(bottleOfWater, 50)
@@ -60,7 +60,7 @@ namespace Shop
                 .AddProduct(socks).Count.ChangeOn(socks, 10).Prices.New(socks, 80)
                 .AddProduct(chocolate).Count.New(chocolate, 24500).Prices.New(chocolate, 300)
                 .AddProduct(cheese).Count.ChangeOn(cheese, 452).Prices.New(cheese, 500);
-            var shopLenta = new ShopBuilder();
+            var shopLenta = new OrdinaryShopBuilder();
             shopLenta.AddId().AddName("Lenta")
                 .AddProduct(apple).Count.New(apple, 460).Prices.New(apple, 1)
                 .AddProduct(bottleOfWater).Count.ChangeOn(bottleOfWater, 34).Prices.New(bottleOfWater, 65)

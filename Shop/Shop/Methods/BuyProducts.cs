@@ -3,12 +3,12 @@ using Shop.Exeptions;
 
 namespace Shop.Shop
 {
-    public class BuyProducts : ShopBuilder
+    public class BuyProducts : OrdinaryShopBuilder
     {
 
-        public BuyProducts(Shop shop) : base(shop)
+        public BuyProducts(OrdinaryShop ordinaryShop) : base(ordinaryShop)
         {
-            Shop = shop;
+            OrdinaryShop = ordinaryShop;
         }
 
         public bool TryToBuyProduct(KeyValuePair<string, int> product)
@@ -16,9 +16,9 @@ namespace Shop.Shop
             bool result = false;
             var productId = product.Key;
             var productAmount = product.Value;
-            if (Shop.ManagerOfShopProducts.Build().TrackedProducts.ContainsKey(productId))
+            if (OrdinaryShop.ManagerOfShopProducts.Build().TrackedProducts.ContainsKey(productId))
             {
-                if (Shop.ManagerOfShopProducts.Build().TrackedProducts[productId].Count - productAmount >= 0)
+                if (OrdinaryShop.ManagerOfShopProducts.Build().TrackedProducts[productId].Count - productAmount >= 0)
                 {
                     result = true;
                 }
@@ -42,9 +42,9 @@ namespace Shop.Shop
             {
                 var productId = product.Key;
                 var productAmount = product.Value;
-                Shop.ManagerOfShopProducts.Build()
+                OrdinaryShop.ManagerOfShopProducts.Build()
                     .TrackedProducts[productId].Count -= productAmount;
-                checkAmount += Shop.ManagerOfShopProducts.Build()
+                checkAmount += OrdinaryShop.ManagerOfShopProducts.Build()
                     .TrackedProducts[productId].Price * productAmount;
             }
             else
@@ -55,16 +55,16 @@ namespace Shop.Shop
             return checkAmount;
         }
         public static float BuyOrdinaryProduct(KeyValuePair<string, int> product,
-            Shop shop)
+            OrdinaryShop ordinaryShop)
         {
             float checkAmount = 0;
-            if (TryToBuyProduct(product, shop))
+            if (TryToBuyProduct(product, ordinaryShop))
             {
                 var productId = product.Key;
                 var productAmount = product.Value;
-                shop.ManagerOfShopProducts.Build()
+                ordinaryShop.ManagerOfShopProducts.Build()
                     .TrackedProducts[productId].Count -= productAmount;
-                checkAmount += shop.ManagerOfShopProducts.Build()
+                checkAmount += ordinaryShop.ManagerOfShopProducts.Build()
                     .TrackedProducts[productId].Price * productAmount;
             }
             else
@@ -74,26 +74,26 @@ namespace Shop.Shop
 
             return checkAmount;
         }
-        public static bool TryToBuyProduct(KeyValuePair<string, int> product, Shop shop)
+        public static bool TryToBuyProduct(KeyValuePair<string, int> product, OrdinaryShop ordinaryShop)
         {
             bool result = false;
             var productId = product.Key;
             var productAmount = product.Value;
-            if (shop.ManagerOfShopProducts.Build().TrackedProducts.ContainsKey(productId))
+            if (ordinaryShop.ManagerOfShopProducts.Build().TrackedProducts.ContainsKey(productId))
             {
-                if (shop.ManagerOfShopProducts.Build().TrackedProducts[productId].Count - productAmount >= 0)
+                if (ordinaryShop.ManagerOfShopProducts.Build().TrackedProducts[productId].Count - productAmount >= 0)
                 {
                     result = true;
                 }
             }
             return result;
         }
-        public static float Buy(Dictionary<string, int> products, Shop shop)
+        public static float Buy(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
         {
             float checkAmount = 0;
             foreach (var product in products)
             {
-                checkAmount += BuyOrdinaryProduct(product, shop);
+                checkAmount += BuyOrdinaryProduct(product, ordinaryShop);
             }
 
             return checkAmount;

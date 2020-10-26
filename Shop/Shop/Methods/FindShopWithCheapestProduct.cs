@@ -8,9 +8,9 @@ namespace Shop.Shop
     {
         public FindShopWithCheapestProduct(ShopManager manager) : base(manager) {}
 
-        private static bool TryId(Shop shop, string productId)
+        private static bool TryId(OrdinaryShop ordinaryShop, string productId)
         {
-            return shop.ManagerOfShopProducts.Manager.TrackedProducts.ContainsKey(productId);
+            return ordinaryShop.ManagerOfShopProducts.Manager.TrackedProducts.ContainsKey(productId);
         }
         public static string Find(string productId, ShopManager manager)
         {

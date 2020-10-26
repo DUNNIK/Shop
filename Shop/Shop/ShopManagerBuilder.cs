@@ -7,9 +7,9 @@
         public ShopManagerBuilder() => Manager = new ShopManager();
         public ShopManagerBuilder(ShopManager manager) => Manager = manager;
 
-        public ShopManagerBuilder AddShop(Shop shop)
+        public ShopManagerBuilder AddShop(OrdinaryShop ordinaryShop)
         {
-            Manager.TrackedShops.Add(shop.Id, shop);
+            Manager.TrackedShops.Add(ordinaryShop.Id, ordinaryShop);
             return this;
         }
         

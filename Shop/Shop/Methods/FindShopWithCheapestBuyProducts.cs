@@ -28,13 +28,32 @@ namespace Shop.Shop.Methods
             string result = resultOrdinaryShop.Name != null ? resultOrdinaryShop.Name : "No shop";
             return result;
         }
+        public static string Find(Dictionary<string, int> products, ShopManager manager)
+        {
+            float minCheck = float.MaxValue;
+            OrdinaryShop resultOrdinaryShop = new OrdinaryShop("");
+            foreach (var shop in manager.TrackedShops.Values)
+            {
+                if (TryCheckProducts(products, shop))
+                {
+                    var checkFromEachShop = CheckProducts(products, shop);
+                    if (checkFromEachShop < minCheck)
+                    {
+                        minCheck = checkFromEachShop;
+                        resultOrdinaryShop = shop;
+                    }
+                }
+            }
+            string result = resultOrdinaryShop.Name != null ? resultOrdinaryShop.Name : "No shop";
+            return result;
+        }
 
-        public bool TryCheckProducts(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
+        public static bool TryCheckProducts(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
         {
             bool res = true;
             try
             {
-                CheckProducts(products, ordinaryShop);//здесь списыывает продукты и потом списывает их в основной функции.
+                CheckProducts(products, ordinaryShop);
             }
             catch
             {
@@ -43,7 +62,7 @@ namespace Shop.Shop.Methods
 
             return res;
         }
-        public float CheckProducts(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
+        public static float CheckProducts(Dictionary<string, int> products, OrdinaryShop ordinaryShop)
         {
             float checkAmount = 0;
             foreach (var product in products)
@@ -53,7 +72,7 @@ namespace Shop.Shop.Methods
 
             return checkAmount;
         }
-        public bool TryToCheckOrdinaryProduct(KeyValuePair<string, int> product, OrdinaryShop ordinaryShop)
+        public static bool TryToCheckOrdinaryProduct(KeyValuePair<string, int> product, OrdinaryShop ordinaryShop)
         {
             bool result = false;
             var productId = product.Key;
@@ -67,7 +86,7 @@ namespace Shop.Shop.Methods
             }
             return result;
         }
-        public float CheckOrdinaryProduct(KeyValuePair<string, int> product,
+        public static float CheckOrdinaryProduct(KeyValuePair<string, int> product,
             OrdinaryShop ordinaryShop)
         {
             float checkAmount = 0;
